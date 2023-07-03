@@ -1,0 +1,78 @@
+[
+  {
+    "$id": "1",
+    "id": 1,
+    "name": "Stolica za bastu",
+    "price": 10.0,
+    "quantity": 5,
+    "description": "Najbolja stolica za vasu bastu ili terasu.",
+    "image": "",
+    "datePosted": "2023-07-02T09:28:51.6162535+02:00",
+    "deleted": false,
+    "city": "Novi Sad",
+    "reviews": [
+      {
+        "$id": "2",
+        "id": 1,
+        "product": {
+          "$ref": "1"
+        },
+        "reviewer": {
+          "$id": "3",
+          "id": 1,
+          "username": "user",
+          "password": "user",
+          "firstName": "Marko",
+          "lastName": "Markovic",
+          "gender": 0,
+          "email": "marko@gmail.com",
+          "dateOfBirth": "2023-07-02T09:28:51.9422534+02:00",
+          "role": 0,
+          "deleted": false,
+          "orders": [
+            {
+              "$id": "4",
+              "id": 1,
+              "product": {
+                "$ref": "1"
+              },
+              "quantity": 1,
+              "deleted": false,
+              "customer": {
+                "$ref": "3"
+              },
+              "orderDate": "2023-07-02T09:28:51.9412536+02:00",
+              "status": 0
+            }
+          ],
+          "favoriteProducts": [
+            {
+              "$ref": "1"
+            }
+          ],
+          "publishedProducts": []
+        },
+        "title": "Prva recenzija",
+        "content": "Mnogo udobne stolice.",
+        "image": "",
+        "approved": false,
+        "deleted": false
+      },
+      {
+        "$id": "5",
+        "id": 2,
+        "product": {
+          "$ref": "1"
+        },
+        "reviewer": {
+          "$ref": "3"
+        },
+        "title": "Woow",
+        "content": "Prezadovoljan sam",
+        "image": "",
+        "approved": true,
+        "deleted": false
+      }
+    ]
+  }
+]

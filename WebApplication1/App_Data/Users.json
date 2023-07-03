@@ -1,0 +1,223 @@
+[
+  {
+    "$id": "1",
+    "id": 1,
+    "username": "user",
+    "password": "user",
+    "firstName": "Marko",
+    "lastName": "Markovic",
+    "gender": 0,
+    "email": "marko@gmail.com",
+    "dateOfBirth": "2023-07-02T09:28:51.9422534+02:00",
+    "role": 0,
+    "deleted": false,
+    "orders": [
+      {
+        "$id": "2",
+        "id": 1,
+        "product": {
+          "$id": "3",
+          "id": 1,
+          "name": "Stolica za bastu",
+          "price": 10.0,
+          "quantity": 5,
+          "description": "Najbolja stolica za vasu bastu ili terasu.",
+          "image": "",
+          "datePosted": "2023-07-02T09:28:51.6162535+02:00",
+          "deleted": false,
+          "city": "Novi Sad",
+          "reviews": [
+            {
+              "$id": "4",
+              "id": 1,
+              "product": {
+                "$ref": "3"
+              },
+              "reviewer": {
+                "$ref": "1"
+              },
+              "title": "Prva recenzija",
+              "content": "Mnogo udobne stolice.",
+              "image": "",
+              "approved": false,
+              "deleted": false
+            },
+            {
+              "$id": "5",
+              "id": 2,
+              "product": {
+                "$ref": "3"
+              },
+              "reviewer": {
+                "$ref": "1"
+              },
+              "title": "Woow",
+              "content": "Prezadovoljan sam",
+              "image": "",
+              "approved": true,
+              "deleted": false
+            }
+          ]
+        },
+        "quantity": 1,
+        "deleted": false,
+        "customer": {
+          "$ref": "1"
+        },
+        "orderDate": "2023-07-02T09:28:51.9412536+02:00",
+        "status": 0
+      }
+    ],
+    "favoriteProducts": [
+      {
+        "$ref": "3"
+      }
+    ],
+    "publishedProducts": []
+  },
+  {
+    "$id": "6",
+    "id": 2,
+    "username": "seller",
+    "password": "seller",
+    "firstName": "Maja",
+    "lastName": "Jovic",
+    "gender": 0,
+    "email": "maja@gmail.com",
+    "dateOfBirth": "2023-07-02T09:28:51.9442517+02:00",
+    "role": 1,
+    "deleted": false,
+    "orders": [],
+    "favoriteProducts": [],
+    "publishedProducts": [
+      {
+        "$ref": "3"
+      }
+    ]
+  },
+  {
+    "$id": "7",
+    "id": 3,
+    "username": "admin",
+    "password": "admin",
+    "firstName": "Admin",
+    "lastName": "Adminovic",
+    "gender": 0,
+    "email": "admin@gmail.com",
+    "dateOfBirth": "2023-07-02T09:28:51.9442517+02:00",
+    "role": 2,
+    "deleted": false,
+    "orders": [],
+    "favoriteProducts": [],
+    "publishedProducts": []
+  },
+  {
+    "$id": "8",
+    "id": 4,
+    "username": "nikola",
+    "password": "123",
+    "firstName": "Nikola",
+    "lastName": "Nikola",
+    "gender": 0,
+    "email": "niikola@gmail.com",
+    "dateOfBirth": "2023-05-10T00:00:00",
+    "role": 0,
+    "deleted": false,
+    "orders": [],
+    "favoriteProducts": [],
+    "publishedProducts": []
+  },
+  {
+    "$id": "9",
+    "id": 5,
+    "username": "123",
+    "password": "123",
+    "firstName": "123",
+    "lastName": "123",
+    "gender": 1,
+    "email": "123@gmail.com",
+    "dateOfBirth": "2021-12-31T00:00:00",
+    "role": 0,
+    "deleted": false,
+    "orders": [],
+    "favoriteProducts": [
+      {
+        "$id": "10",
+        "id": 1,
+        "name": "Stolica za bastu",
+        "price": 10.0,
+        "quantity": 5,
+        "description": "Najbolja stolica za vasu bastu ili terasu.",
+        "image": "",
+        "datePosted": "2023-07-02T09:28:51.6162535+02:00",
+        "deleted": false,
+        "city": "Novi Sad",
+        "reviews": [
+          {
+            "$id": "11",
+            "id": 1,
+            "product": {
+              "$ref": "10"
+            },
+            "reviewer": {
+              "$id": "12",
+              "id": 1,
+              "username": "user",
+              "password": "user",
+              "firstName": "Marko",
+              "lastName": "Markovic",
+              "gender": 0,
+              "email": "marko@gmail.com",
+              "dateOfBirth": "2023-07-02T09:28:51.9422534+02:00",
+              "role": 0,
+              "deleted": false,
+              "orders": [
+                {
+                  "$id": "13",
+                  "id": 1,
+                  "product": {
+                    "$ref": "10"
+                  },
+                  "quantity": 1,
+                  "deleted": false,
+                  "customer": {
+                    "$ref": "12"
+                  },
+                  "orderDate": "2023-07-02T09:28:51.9412536+02:00",
+                  "status": 0
+                }
+              ],
+              "favoriteProducts": [
+                {
+                  "$ref": "10"
+                }
+              ],
+              "publishedProducts": []
+            },
+            "title": "Prva recenzija",
+            "content": "Mnogo udobne stolice.",
+            "image": "",
+            "approved": false,
+            "deleted": false
+          },
+          {
+            "$id": "14",
+            "id": 2,
+            "product": {
+              "$ref": "10"
+            },
+            "reviewer": {
+              "$ref": "12"
+            },
+            "title": "Woow",
+            "content": "Prezadovoljan sam",
+            "image": "",
+            "approved": true,
+            "deleted": false
+          }
+        ]
+      }
+    ],
+    "publishedProducts": []
+  }
+]

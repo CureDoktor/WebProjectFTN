@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="../Scripts/jquery-3.3.1.js"></script>
+    <script src="../Scripts/Login.js"></script>
+    <script src="../Scripts/Navigation.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <title>Home</title>
+</head>
+<body>
+
+    <header>
+        <nav class="nav-left">
+            <ul class="nav_links">
+                <li><a id="nav-index" href="#">Pocetna</a></li>
+
+            </ul>
+        </nav>
+        <nav class="nav-right">
+            <ul ul class="nav_links">
+                <li><a id="nav-registration" href="#">Registracija</a></li>
+                <li><a id="nav-login" href="#">Prijava</a></li>
+                <li><a id="nav-user" href="#">Korisnicka stranica</a></li>
+                <li><a id="nav-sign_out" href="#">Odjava</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div>
+
+
+            <form class="login-form">
+                <table>
+                    <tr><td colspan="2" align="center"><h1>Prijava</h1></td></tr>
+                    <tr><td>Korisnicko ime</td><td><input id="txt-username" type="text" placeholder="Korisnicko ime"></td></tr>
+                    <tr><td>Lozinka</td><td><input id="txt-password" type="password" placeholder="Lozinka"></td></tr>
+                    <tr><td colspan="2" align="center"><button id="loggin-button" type="submit">Prijavi se</button></td></tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

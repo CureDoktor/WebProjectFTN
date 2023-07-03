@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="../Scripts/jquery-3.3.1.js"></script>
+    <script src="../Scripts/Profile.js"></script>
+    <script src="../Scripts/User.js"></script>
+    <script src="../Scripts/Navigation.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <nav class="nav-left">
+            <ul class="nav_links">
+                <li><a id="nav-index" href="#">Pocetna</a></li>
+
+            </ul>
+        </nav>
+        <nav class="nav-right">
+            <ul ul class="nav_links">
+                <li><a id="nav-registration" href="#">Registracija</a></li>
+                <li><a id="nav-login" href="#">Prijava</a></li>
+                <li><a id="nav-user" href="#">Korisnicka stranica</a></li>
+                <li><a id="nav-sign_out" href="#">Odjava</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="center-block">
+        <button id="toggle-profile" type="button">Prikazi / sakrij profil</button>
+        <div class="customer-section">
+            <button id="toggle-orders" type="button">Prikazi / sakrij porudzbine</button>
+            <button id="toggle-products" type="button">Prikazi / sakrij omiljenje proizvode</button>
+        </div>
+    </div>
+
+    <div class="container" id="profile-section">
+        <form class="profile-form">
+            <table>
+                <tr><td colspan="2" align="center"><h1>Profil</h1></td></tr>
+                <tr><td>Korisnicko ime</td><td> <input id="txt-username" type="text" placeholder="Korisnicko ime"></td></tr>
+                <tr><td>Lozinka</td><td><input id="txt-password" type="password" placeholder="Lozinka"></td></tr>
+                <tr><td>Potvrdi lozinku</td><td><input id="txt-confirm-password" type="password" placeholder="Potvrdi lozinku"></td></tr>
+                <tr><td>Ime</td><td><input id="txt-fname" type="text" placeholder="Ime"></td></tr>
+                <tr><td>Prezime</td><td><input id="txt-lname" type="text" placeholder="Prezime"></td></tr>
+                <tr><td>Email</td><td><input id="txt-email" type="email" placeholder="E-mail"></td></tr>
+                <tr><td>Datum rodjenja</td><td><input id="txt-date" type="date"></td></tr>
+                <tr>
+                    <td>Pol</td>
+                    <td>
+                        <select id="gender">
+                            <option value="0">Musko</option>
+                            <option value="1">Zensko</option>
+                            <option value="2">Drugo</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr><td colspan="2" align="center"><button id="profile-save-button" type="submit">Sacuvaj</button></td></tr>
+
+            </table>
+        </form>
+    </div>
+
+    <div class="customer-section">
+        <div class="container" id="orders-section">
+            <table id="order-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Order Date</th>
+                        <th>Status</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div id="reviewModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Ostavi recenziju</h2>
+                <form id="reviewForm">
+                    <br>
+                    <label for="review-title">Naslov:</label>
+                    <input type="text" id="review-title" name="review-title" />
+                    <label for="revire-description">Sadrzaj:</label>
+                    <textarea id="review-description" name="revire-description"></textarea>
+                    <br>
+                    <button id="add-new-review" type="submit">Potvrdi</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div class="container" id="fav-products-section">
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Description</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="seller-section">
+        <div id="products-search">
+            <table id="search-table">
+                <tr>
+                    <th>Naziv</th>
+                    <th>Cena</th>
+                    <th>Grad</th>
+                    <th rowspan="2">
+                        <button id="search-button">Pretrazi</button>
+                    </th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="search-name" placeholder="Naziv" value="" /></td>
+                    <td>
+                        <input type="number" id="search-min-price" min="0" max="100000" placeholder="Od" />
+                        <input type="number" id="search-max-price" min="0" max="100000" placeholder="Do" />
+                    </td>
+                    <td><input type="text" id="search-city" placeholder="Grad" value="" /></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <button id="new-product-button">Dodaj novi proizvod</button>
+        <div id="products-div">
+
+        </div>
+
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <input type="text" id="product-title" placeholder="Naziv">
+                <img id="product-image" src="" alt="Product Image">
+                <p>Slika:</p><input type="file" id="product-image-upload" accept="image/*">
+                <input type="text" id="product-price" placeholder="Cena">
+                <input type="text" id="product-quantity" placeholder="Količina">
+                <input type="text" id="product-city" placeholder="Grad">
+                <textarea id="product-description" placeholder="Opis"></textarea>
+                <button id="submitChanges">Potvrdi promene</button>
+            </div>
+        </div>
+
+        <div id="productModalAdd" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <input type="text" id="product-title1" placeholder="Naziv">
+                <img id="product-image1" src="" alt="Product Image">
+                <p>Slika:</p><input type="file" id="product-image-upload1" accept="image/*">
+                <input type="text" id="product-price1" placeholder="Cena">
+                <input type="text" id="product-quantity1" placeholder="Količina">
+                <input type="text" id="product-city1" placeholder="Grad">
+                <textarea id="product-description1" placeholder="Opis"></textarea>
+                <button id="submitChangesAdd">Dodaj</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-section">
+        <div class="search-container">
+            <input type="text" id="search-nameq" placeholder="Pretraga po imenu">
+            <input type="text" id="search-lastnameq" placeholder="Pretraga po prezimenu">
+            <select id="search-roleq">
+                <option value="">Sve uloge</option>
+                <option value="KUPAC">Kupac</option>
+                <option value="PRODAVAC">Prodavac</option>
+            </select>
+            <button id="search-btnq">Pretraži</button>
+        </div>
+        <div id="admin-user-table">
+            <table id="users-table">
+                <thead><tr><th>Id</th><th>Ime</th><th>Prezime</th><th>Korisnicko ime</th><th>Uloga</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <br />
+        <div id="orders-section1">
+            <table id="admin-order-table">
+                <thead>
+                    <tr>
+                        <th>Porudzbina ID</th>
+                        <th>Naziv proizvoda</th>
+                        <th>Kolicina</th>
+                        <th>Datum</th>
+                        <th>Status</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="reviews-section">
+            <table id="admin-review-table">
+                <thead>
+                    <tr>
+                        <th>Naziv proizvoda</th>
+                        <th>Ime kupca</th>
+                        <th>Naslov</th>
+                        <th>Sadrzaj</th>
+                        <th>Odobrena</th>
+                        <th colspan="1"></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

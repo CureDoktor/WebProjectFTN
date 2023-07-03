@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="../Scripts/jquery-3.3.1.js"></script>
+    <script src="../Scripts/Index.js"></script>
+    <script src="../Scripts/Navigation.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <title>Home</title>
+</head>
+<body>
+
+    <header>
+        <nav class="nav-left">
+            <ul class="nav_links">
+                <li><a id="nav-index" href="#">Pocetna</a></li>
+
+            </ul>
+        </nav>
+        <nav class="nav-right">
+            <ul ul class="nav_links">
+                <li><a id="nav-registration" href="#">Registracija</a></li>
+                <li><a id="nav-login" href="#">Prijava</a></li>
+                <li><a id="nav-user" href="#">Korisnicka stranica</a></li>
+                <li><a id="nav-sign_out" href="#">Odjava</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br />
+    <div id="products-search">
+        <table id="search-table">
+            <tr>
+                <th>Naziv</th>
+                <th>Cena</th>
+                <th>Grad</th>
+                <th rowspan="2">
+                    <button id="search-button">Pretrazi</button>
+                </th>
+            </tr>
+            <tr>
+                <td><input type="text" id="search-name" placeholder="Naziv" value="" /></td>
+                <td>
+                    <input type="number" id="search-min-price" min="0" max="100000" placeholder="Od" />
+                    <input type="number" id="search-max-price" min="0" max="100000" placeholder="Do" />
+                </td>
+                <td><input type="text" id="search-city" placeholder="Grad" value="" /></td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <br />
+    <div id="products-div">
+
+    </div>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Potvrdite narudžbinu</h3>
+            <p>Naziv proizvoda: <span id="productName"></span></p>
+            <label for="quantityInput">Unesite količinu:</label>
+            <input type="number" id="quantityInput">
+            <button id="confirmOrder" class="btn-confirm">Potvrdi</button>
+        </div>
+    </div>
+</body>
+</html>
